@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fele-erp"
+version = "0.1.0"
+description = "SaaS inventory, purchase, sales, and stock management backend with FastAPI."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "email-validator>=2.2.0",
+  "fastapi>=0.116.0",
+  "uvicorn[standard]>=0.35.0",
+  "psycopg[binary]>=3.2.9",
+  "sqlalchemy>=2.0.41",
+  "pydantic-settings>=2.10.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

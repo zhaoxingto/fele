@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: fele-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: fele_erp
+      POSTGRES_USER: fele
+      POSTGRES_PASSWORD: fele_dev_password
+    ports:
+      - "54329:5432"
+    volumes:
+      - fele-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  fele-postgres-data:
